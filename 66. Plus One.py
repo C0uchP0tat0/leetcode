@@ -5,7 +5,6 @@ class Solution:
         d=int(d)+1
         for i in str(d):
             result_list.append(int(i))
-        # print(result_list)
         return result_list
         
 def main():

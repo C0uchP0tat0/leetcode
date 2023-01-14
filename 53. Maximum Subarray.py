@@ -6,7 +6,6 @@ class Solution:
         # loop
         for i in range(1, len(nums)):
             temp_sum = max(temp_sum + nums[i], nums[i])
-            print(temp_sum)
             if temp_sum > answer:
                 answer = temp_sum
         return answer

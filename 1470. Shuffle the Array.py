@@ -5,7 +5,6 @@ class Solution:
             answer.append(nums[i])
             answer.append(nums[i+(n)])
         return answer
-        # print(answer)
         
         
 def main():

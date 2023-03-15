@@ -1,21 +1,14 @@
 class Solution:
-    def addDigits(self, num: int) -> int:
-        if len(str(num))==1:
-            return num
-        if len(str(num)) == 1:
-            return num
-        else:
-            num = sum([int(n) for n in str(num)])
-            num = self.addDigits(num)
-        return num
+    def isUgly(self, n: int) -> bool:
         
         
         
 def main():
-    num = 38
-    # Output: 2
+    n = 6
+    # Output: true
+    # Explanation: 6 = 2 × 3
     y=Solution()
-    y.addDigits(num)
+    y.addDigits(n)
 
 
 if __name__ == "__main__":

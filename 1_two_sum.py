@@ -1,24 +1,19 @@
-def get_result(nums, target):
-    l=list()
-    len_nums = len(nums)
-    indexes_list=[i for i in range(len_nums)]
-    d_nums = dict(zip(indexes_list, nums))
-    for i in d_nums:
-        for k in range(1,len_nums):
-            try:
-                z=d_nums[i+k]
-            except KeyError:
-                continue
-            if d_nums[i]+z==target:
-                l.append(i)
-                l.append(i+k)
-                return l
-    
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        result = list()
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i]+nums[j]==target:
+                    result.append(i)
+                    result.append(j)
+        return result
+
 
 def main():
-    nums = [2,7,11,15]
-    target =9
-    get_result(nums, target)
+    nums = [3,2,4]
+    target = 6
+    y=Solution()
+    y.twoSum(nums, target)
     
 if __name__ == "__main__":
     main()

@@ -1,41 +1,34 @@
+from collections import defaultdict
+
+
 class Solution:
-    def __init__(self):
-        self.len_res_list=0
-        self.count=0
-        
-    def result(self):
-        print(self.len_res_list)
-        return self.len_res_list
-    
-    def crop_list(self, s):
-        s=s[1:]
-        self.lengthOfLongestSubstring(s)
-        return s
-    
     def lengthOfLongestSubstring(self, s: str) -> int:
-    
-        res_list=list()
-        print(s)
-        if len(s)>self.len_res_list:
-            for i in s:
-                # print(res_list)
-                if i not in res_list:
-                    res_list.append(i)
-                    if len(res_list)>self.len_res_list:
-                        self.len_res_list=len(res_list)
+        if s==" ":
+            return 1
+        elif s=="":
+            return 0
+        res_count = 0
+        st=s[:]+s[-1]
+        for i in range(len(st)):
+            d = defaultdict(int)
+            count = 0
+            for j in st[i:]:
+                d[j]+=1
+                if d[j]==1:
+                    count+=1
                 else:
-                    if len(res_list)>self.len_res_list:
-                        self.len_res_list=len(res_list)
-                    res_list.clear()
-                    res_list.append(i)
-            s=self.crop_list(s)
-            self.count+=1
-        self.result()
+                    if count>res_count:
+                        res_count=count
+                        break
+                    else:
+                        break
+        return res_count
+            
         
     
 
 def main():
-    s = "abcabcbb"
+    s="au"
     x=Solution()
     x.lengthOfLongestSubstring(s)
     
